@@ -1,45 +1,42 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { prisma } from '@/lib/prisma';
+import * as z from 'zod';
+
+const leadSchema = z.object({
+  fullName: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
+  email: z.string().email({ message: 'Please enter a valid email address.' }),
+  phone: z.string().min(10, { message: 'Please enter a valid phone number.' }),
+  company: z.string().min(2, { message: 'Company name must be at least 2 characters.' }),
+  message: z.string().min(10, { message: 'Message must be at least 10 characters.' }),
+});
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
     
-    // In a real application, you would validate the body again using Zod
-    // and store it in a database like PostgreSQL or MongoDB.
-    // For this mockup, we'll try to save it to a local JSON file.
+    // Validate request body
+    const validatedData = leadSchema.parse(body);
     
-    const newLead = {
-      id: Date.now().toString(),
-      ...body,
-      createdAt: new Date().toISOString(),
-    };
-
-    try {
-      const dataFilePath = path.join(process.cwd(), 'data', 'leads.json');
-      
-      let leads = [];
-      if (fs.existsSync(dataFilePath)) {
-        const fileData = fs.readFileSync(dataFilePath, 'utf-8');
-        leads = JSON.parse(fileData);
-      }
-      
-      leads.push(newLead);
-      fs.writeFileSync(dataFilePath, JSON.stringify(leads, null, 2));
-    } catch (fsError) {
-      // Ignore file system errors in serverless environments like Vercel
-      console.log('Could not write to local file system, but mocking success.', fsError);
-    }
+    // Insert into PostgreSQL using Prisma
+    const newLead = await prisma.lead.create({
+      data: validatedData,
+    });
 
     return NextResponse.json(
       { message: 'Lead captured successfully', leadId: newLead.id },
       { status: 201 }
     );
   } catch (error) {
+    if (error instanceof z.ZodError) {
+      return NextResponse.json(
+        { error: 'Validation failed', details: error.errors },
+        { status: 400 }
+      );
+    }
+    
     console.error('Error capturing lead:', error);
     return NextResponse.json(
-      { error: 'Failed to capture lead' },
+      { error: 'Failed to capture lead due to an internal server error' },
       { status: 500 }
     );
   }
