@@ -12,7 +12,7 @@ import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
 
 const formSchema = z.object({
-  name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
+  fullName: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
   email: z.string().email({ message: 'Please enter a valid email address.' }),
   phone: z.string().min(10, { message: 'Please enter a valid phone number.' }),
   company: z.string().min(2, { message: 'Company name must be at least 2 characters.' }),
@@ -100,14 +100,14 @@ export function CTA() {
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="space-y-2">
-                  <Label htmlFor="name">Full Name</Label>
+                  <Label htmlFor="fullName">Full Name</Label>
                   <Input 
-                    id="name" 
+                    id="fullName" 
                     placeholder="John Doe" 
-                    {...register('name')}
-                    className={errors.name ? "border-red-500 focus-visible:ring-red-500" : ""}
+                    {...register('fullName')}
+                    className={errors.fullName ? "border-red-500 focus-visible:ring-red-500" : ""}
                   />
-                  {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
+                  {errors.fullName && <p className="text-red-500 text-xs mt-1">{errors.fullName.message}</p>}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Work Email</Label>
