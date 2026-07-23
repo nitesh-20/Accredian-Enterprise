@@ -8,6 +8,7 @@ import { Toaster } from '@/components/ui/sonner';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://enterprise.accredian.com'),
   title: 'Accredian Enterprise - Upskill Your Team',
   description: 'Empowering professionals with top-tier education and practical skills to thrive in the modern workplace.',
   openGraph: {

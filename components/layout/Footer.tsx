@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { FOOTER_LINKS } from '@/constants/navigation';
-import { Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
+import { Globe, MessageCircle, Mail, Share2, Video } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -18,19 +18,19 @@ export function Footer() {
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors bg-gray-800 p-2 rounded-full">
-                <Facebook size={18} />
+                <Globe size={18} />
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors bg-gray-800 p-2 rounded-full">
-                <Twitter size={18} />
+                <MessageCircle size={18} />
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors bg-gray-800 p-2 rounded-full">
-                <Linkedin size={18} />
+                <Share2 size={18} />
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors bg-gray-800 p-2 rounded-full">
-                <Instagram size={18} />
+                <Mail size={18} />
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors bg-gray-800 p-2 rounded-full">
-                <Youtube size={18} />
+                <Video size={18} />
               </a>
             </div>
           </div>

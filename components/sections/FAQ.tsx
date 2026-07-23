@@ -50,7 +50,7 @@ export function FAQ() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion className="w-full">
             {FAQS.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`} className="border-b border-slate-200 py-2">
                 <AccordionTrigger className="text-left text-lg font-medium text-slate-800 hover:text-blue-600">

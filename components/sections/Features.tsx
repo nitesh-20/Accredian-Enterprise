@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { BookOpen, Users, Trophy, Briefcase, Video, Certificate } from 'lucide-react';
+import { BookOpen, Users, Trophy, Briefcase, Video, Award } from 'lucide-react';
 
 const FEATURES = [
   {
@@ -30,7 +30,7 @@ const FEATURES = [
     description: 'Access exclusive job boards, resume building workshops, and mock interviews to land your dream job.'
   },
   {
-    icon: <Certificate className="w-6 h-6 text-blue-600" />,
+    icon: <Award className="w-6 h-6 text-blue-600" />,
     title: 'Global Certification',
     description: 'Earn a globally recognized certificate upon completion to showcase your newly acquired skills.'
   }
