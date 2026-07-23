@@ -44,7 +44,7 @@ export function CTA() {
       } else {
         toast.error('Something went wrong. Please try again.');
       }
-    } catch (error) {
+    } catch {
       toast.error('An error occurred. Please try again later.');
     } finally {
       setIsSubmitting(false);

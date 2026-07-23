@@ -57,7 +57,7 @@ export function Testimonials() {
                 ))}
               </div>
               <p className="text-slate-700 italic flex-grow mb-8 leading-relaxed">
-                "{testimonial.content}"
+                &quot;{testimonial.content}&quot;
               </p>
               <div className="flex items-center gap-4 mt-auto">
                 <div className="w-12 h-12 rounded-full overflow-hidden relative">

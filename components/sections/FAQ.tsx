@@ -40,7 +40,7 @@ export function FAQ() {
             Frequently Asked Questions
           </h2>
           <p className="text-lg text-slate-600">
-            Have questions about our enterprise programs? We've got answers.
+            Have questions about our enterprise programs? We&apos;ve got answers.
           </p>
         </div>
 
