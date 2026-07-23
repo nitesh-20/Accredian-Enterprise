@@ -1,5 +1,9 @@
 # Accredian Enterprise Landing Page
 
+[![Vercel Deployment](https://img.shields.io/badge/Vercel-Deployed-success?logo=vercel&logoColor=white)](https://accredian-enterprise-two-rho.vercel.app)
+
+**Live Demo**: [https://accredian-enterprise-two-rho.vercel.app](https://accredian-enterprise-two-rho.vercel.app)
+
 A high-quality, production-ready partial clone of the Accredian Enterprise landing page. Built with modern web development standards focusing on performance, accessibility, and a premium user experience. 
 
 ## Project Overview
