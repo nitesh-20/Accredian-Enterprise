@@ -1,8 +1,8 @@
 # Accredian Enterprise Landing Page
 
-[![Vercel Deployment](https://img.shields.io/badge/Vercel-Deployed-success?logo=vercel&logoColor=white)](https://accredian-prod-9ykf4ephi-ns0893222-8329s-projects.vercel.app)
+[![Vercel Deployment](https://img.shields.io/badge/Vercel-Deployed-success?logo=vercel&logoColor=white)](https://accredian-enterprise-ns0893222-8329s-projects.vercel.app)
 
-**Live Demo**: [https://accredian-prod-9ykf4ephi-ns0893222-8329s-projects.vercel.app](https://accredian-prod-9ykf4ephi-ns0893222-8329s-projects.vercel.app)
+**Live Demo**: [https://accredian-enterprise-ns0893222-8329s-projects.vercel.app](https://accredian-enterprise-ns0893222-8329s-projects.vercel.app)
 
 A high-quality, production-ready partial clone of the Accredian Enterprise landing page. Built with modern web development standards focusing on performance, accessibility, and a premium user experience. 
 
