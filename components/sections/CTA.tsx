@@ -106,8 +106,10 @@ export function CTA() {
                     placeholder="John Doe" 
                     {...register('fullName')}
                     className={errors.fullName ? "border-red-500 focus-visible:ring-red-500" : ""}
+                    aria-invalid={!!errors.fullName}
+                    aria-describedby={errors.fullName ? "fullName-error" : undefined}
                   />
-                  {errors.fullName && <p className="text-red-500 text-xs mt-1">{errors.fullName.message}</p>}
+                  {errors.fullName && <p id="fullName-error" className="text-red-500 text-xs mt-1">{errors.fullName.message}</p>}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Work Email</Label>
@@ -117,8 +119,10 @@ export function CTA() {
                     placeholder="john@company.com" 
                     {...register('email')}
                     className={errors.email ? "border-red-500 focus-visible:ring-red-500" : ""}
+                    aria-invalid={!!errors.email}
+                    aria-describedby={errors.email ? "email-error" : undefined}
                   />
-                  {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
+                  {errors.email && <p id="email-error" className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
                 </div>
               </div>
               
@@ -131,8 +135,10 @@ export function CTA() {
                     placeholder="+1 (555) 000-0000" 
                     {...register('phone')}
                     className={errors.phone ? "border-red-500 focus-visible:ring-red-500" : ""}
+                    aria-invalid={!!errors.phone}
+                    aria-describedby={errors.phone ? "phone-error" : undefined}
                   />
-                  {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>}
+                  {errors.phone && <p id="phone-error" className="text-red-500 text-xs mt-1">{errors.phone.message}</p>}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="company">Company Name</Label>
@@ -141,8 +147,10 @@ export function CTA() {
                     placeholder="Acme Corp" 
                     {...register('company')}
                     className={errors.company ? "border-red-500 focus-visible:ring-red-500" : ""}
+                    aria-invalid={!!errors.company}
+                    aria-describedby={errors.company ? "company-error" : undefined}
                   />
-                  {errors.company && <p className="text-red-500 text-xs mt-1">{errors.company.message}</p>}
+                  {errors.company && <p id="company-error" className="text-red-500 text-xs mt-1">{errors.company.message}</p>}
                 </div>
               </div>
 
@@ -153,8 +161,10 @@ export function CTA() {
                   placeholder="Tell us about your team's training needs..." 
                   className={`min-h-[120px] ${errors.message ? "border-red-500 focus-visible:ring-red-500" : ""}`}
                   {...register('message')}
+                  aria-invalid={!!errors.message}
+                  aria-describedby={errors.message ? "message-error" : undefined}
                 />
-                {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
+                {errors.message && <p id="message-error" className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
               </div>
 
               <Button 

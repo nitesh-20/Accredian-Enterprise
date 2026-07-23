@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     siteName: 'Accredian Enterprise',
     images: [
       {
-        url: '/og-image.jpg', // Placeholder, you should add a real image in public folder
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Accredian Enterprise',
